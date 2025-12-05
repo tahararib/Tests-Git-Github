@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 # FinOps Git Repository Monitoring Script
 # Tracks repository costs and optimization opportunities
 echo "=== Git FinOps Analysis ==="
