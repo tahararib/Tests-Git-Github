@@ -12,6 +12,10 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+    # AJOUTEZ CE BLOC EXACTEMENT ICI
+    - name: Set Execute Permission
+      run: chmod +x scripts/finops-monitor.sh
+    # FIN DU BLOC AJOUT
     
     - name: Run FinOps Analysis
       run: |
