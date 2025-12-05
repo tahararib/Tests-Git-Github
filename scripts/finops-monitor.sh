@@ -1,5 +1,5 @@
 #!/bin/bash 
-# FinOps Git Repository Monitoring Script
+# FinOps Git Repository Monitoring Script updated
 # Tracks repository costs and optimization opportunities
 echo "=== Git FinOps Analysis ==="
 echo "Date: $(date)"
