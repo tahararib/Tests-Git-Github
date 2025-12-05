@@ -1,0 +1,33 @@
+name: FinOps Analysis
+
+on:
+  schedule:
+    - cron: '0 9 * * MON'  # Weekly Monday 9 AM
+  workflow_dispatch:
+
+jobs:
+  finops-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Run FinOps Analysis
+      run: |
+        ./scripts/finops-monitor.sh > finops-report.md
+        
+    - name: Create Issue with Report
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const report = fs.readFileSync('finops-report.md', 'utf8');
+          
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Weekly FinOps Analysis - ${new Date().toISOString().split('T')[0]}`,
+            body: `## Git Repository FinOps Analysis\n\n\`\`\`\n${report}\n\`\`\``,
+            labels: ['finops', 'monitoring', 'automated']
+          });
