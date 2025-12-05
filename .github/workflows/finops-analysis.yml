@@ -4,7 +4,11 @@ on:
   schedule:
     - cron: '0 9 * * MON'  # Weekly Monday 9 AM
   workflow_dispatch:
-
+  
+# AJOUTEZ CE BLOC EXACTEMENT ICI
+permissions:
+  issues: write
+ 
 jobs:
   finops-analysis:
     runs-on: ubuntu-latest
