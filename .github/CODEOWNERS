@@ -1,0 +1,24 @@
+
+# Utilisation de @tahararib pour simuler toutes les équipes
+# Global ownership
+* @tahararib
+
+# Frontend components
+/frontend/ @tahararib
+/ui/ @tahararib @tahararib # Simulation de la double approbation
+
+# Backend services
+/api/ @tahararib
+/services/ @tahararib
+
+# Infrastructure
+/terraform/ @tahararib @tahararib
+/kubernetes/ @tahararib @tahararib
+
+# Security-sensitive
+/security/ @tahararib
+/.github/ @tahararib @tahararib
+
+# Documentation
+/docs/ @tahararib
+README.md @tahararib
